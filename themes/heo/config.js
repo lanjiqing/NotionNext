@@ -8,7 +8,7 @@ const CONFIG = {
 
   // 首页顶部通知条滚动内容，如不需要可以留空 []
   HEO_NOTICE_BAR: [
-    { title: 'Welcome欢饮你的到来🎉', url: 'https://www.blinky.cn' },
+    { title: 'Welcome欢迎你的到来🎉', url: 'https://www.blinky.cn' },
     { title: '希望你的每一天都开心快乐💕', url: 'https://www.blinky.cn' },
     { title: '昨天是段历史💕', url: 'https://www.blinky.cn' },
     { title: '明天是个谜团💕', url: 'https://www.blinky.cn' },
