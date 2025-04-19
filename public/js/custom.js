@@ -1,7 +1,6 @@
 // 这里编写自定义js脚本；将被静态引入到页面中
 /*
- 2017 Julian Garnier
- Released under the MIT license
+鼠标点击效果
 */
 var $jscomp={scope:{}};$jscomp.defineProperty="function"==typeof Object.defineProperties?Object.defineProperty:function(e,r,p){if(p.get||p.set)throw new TypeError("ES3 does not support getters and setters.");e!=Array.prototype&&e!=Object.prototype&&(e[r]=p.value)};$jscomp.getGlobal=function(e){return"undefined"!=typeof window&&window===e?e:"undefined"!=typeof global&&null!=global?global:e};$jscomp.global=$jscomp.getGlobal(this);$jscomp.SYMBOL_PREFIX="jscomp_symbol_";
 $jscomp.initSymbol=function(){$jscomp.initSymbol=function(){};$jscomp.global.Symbol||($jscomp.global.Symbol=$jscomp.Symbol)};$jscomp.symbolCounter_=0;$jscomp.Symbol=function(e){return $jscomp.SYMBOL_PREFIX+(e||"")+$jscomp.symbolCounter_++};
@@ -42,7 +41,7 @@ function initfirework() {
     }
     function setParticuleDirection(e) {
         var t = anime.random(0, 360) * Math.PI / 180
-            , a = anime.random(50, 180)
+            , a = anime.random(30, 90)
             , n = [-1, 1][anime.random(0, 1)] * a;
         return {
             x: e.x + n * Math.cos(t),
@@ -54,7 +53,7 @@ function initfirework() {
         return a.x = e,
             a.y = t,
             a.color = colors[anime.random(0, colors.length - 1)],
-            a.radius = anime.random(16, 32),
+            a.radius = anime.random(8, 16),
             a.endPos = setParticuleDirection(a),
             a.draw = function () {
                 ctx.beginPath(),
@@ -106,7 +105,7 @@ function initfirework() {
             update: renderParticule
         }).add({
             targets: a,
-            radius: anime.random(80, 160),
+            radius: anime.random(40, 80),
             lineWidth: 0,
             alpha: {
                 value: 0,
@@ -141,7 +140,7 @@ function initfirework() {
     var canvasEl = document.querySelector(".fireworks");
     if (canvasEl) {
         var ctx = canvasEl.getContext("2d")
-            , numberOfParticules = 30
+            , numberOfParticules = 15
             , pointerX = 0
             , pointerY = 0
             , tap = "mousedown"
